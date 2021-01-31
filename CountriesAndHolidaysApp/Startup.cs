@@ -1,3 +1,4 @@
+using CountriesAndHolidaysApp.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -10,6 +11,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Pomelo.EntityFrameworkCore.MySql;
+using Microsoft.EntityFrameworkCore;
 
 namespace CountriesAndHolidaysApp
 {
@@ -25,6 +28,8 @@ namespace CountriesAndHolidaysApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            string mySqlConnectionStr = Configuration.GetConnectionString("DefaultConnection");
+            services.AddDbContextPool<CountriesAndHolidaysContext>(options => options.UseMySql(mySqlConnectionStr, ServerVersion.AutoDetect(mySqlConnectionStr)));
             services.AddControllers();
         }
 
