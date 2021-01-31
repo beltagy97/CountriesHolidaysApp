@@ -3,14 +3,16 @@ using System;
 using CountriesAndHolidaysApp.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CountriesAndHolidaysApp.Migrations
 {
     [DbContext(typeof(CountriesAndHolidaysContext))]
-    partial class CountriesAndHolidaysContextModelSnapshot : ModelSnapshot
+    [Migration("20210131162233_Refactor-unused-prop")]
+    partial class Refactorunusedprop
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -10,7 +10,6 @@ namespace CountriesAndHolidaysApp.Models
     {
         [Key]
         public int ID { get; set; }
-        public int CountryID { get; set; }
         [Required]
         public String Name { get; set; }
         [Required]

@@ -1,8 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using CountriesAndHolidaysApp.Models;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CountriesAndHolidaysApp.Services;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -12,12 +14,24 @@ namespace CountriesAndHolidaysApp.Controllers
     [ApiController]
     public class CountryHolidayController : ControllerBase
     {
+        private CountriesAndHolidaysContext CountryHolidayContext;
+        private CountryHolidayServices srvc;
+        public CountryHolidayController(CountriesAndHolidaysContext cntxt)
+        {
+            CountryHolidayContext = cntxt;
+            srvc = new CountryHolidayServices();
+        }
         // GET: api/<ValuesController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public async Task<object> Get()
         {
-            return new string[] { "value1", "value2" };
+           object response = await srvc.sync(CountryHolidayContext);
+            return response;
         }
+
+       
+
+
 
         // GET api/<ValuesController>/5
         [HttpGet("{id}")]

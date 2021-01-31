@@ -38,3 +38,4 @@ C:\Users\Ahmad\source\repos\CountriesAndHolidaysApp\CountriesAndHolidaysApp\obj\
 C:\Users\Ahmad\source\repos\CountriesAndHolidaysApp\CountriesAndHolidaysApp\obj\Debug\netcoreapp3.1\CountriesAndHolidaysApp.dll
 C:\Users\Ahmad\source\repos\CountriesAndHolidaysApp\CountriesAndHolidaysApp\obj\Debug\netcoreapp3.1\CountriesAndHolidaysApp.pdb
 C:\Users\Ahmad\source\repos\CountriesAndHolidaysApp\CountriesAndHolidaysApp\obj\Debug\netcoreapp3.1\CountriesAndHolidaysApp.genruntimeconfig.cache
+C:\Users\Ahmad\source\repos\CountriesAndHolidaysApp\CountriesAndHolidaysApp\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
