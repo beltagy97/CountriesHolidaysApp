@@ -16,5 +16,7 @@ namespace CountriesAndHolidaysApp.Models
         public String start_date { get; set; }
         [Required]
         public String end_date { get; set; }
+        public int countryID { get; set; }
+
     }
 }

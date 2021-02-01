@@ -8,7 +8,7 @@ namespace CountriesAndHolidaysApp.Services
 {
      public interface ICountryHolidayServices
     {
-
+        public string getCountryHolidays(string countryCode);
         Task<String> GetDataFromAPI(String url);
 
         public IList<Country> CountryJSONParser(string response);

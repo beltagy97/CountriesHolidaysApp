@@ -31,13 +31,12 @@ namespace CountriesAndHolidaysApp.Controllers
 
        
 
-
-
         // GET api/<ValuesController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+        [HttpGet("{code}")]
+        public  string Get(string code)
         {
-            return "value";
+            string response =  srvc.getCountryHolidays(code);
+            return response;
         }
 
         // POST api/<ValuesController>

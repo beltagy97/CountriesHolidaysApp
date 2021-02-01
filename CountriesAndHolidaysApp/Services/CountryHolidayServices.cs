@@ -92,12 +92,12 @@ namespace CountriesAndHolidaysApp.Services
             foreach (Country country in countries)
             {
 
-                string correspondingHolidayURL = "https://www.googleapis.com/calendar/v3/calendars/en." + country.code + "%23holiday%40group.v.calendar.google.com/events?key=AIzaSyBpSZoCr4xUGsNzmAuxVw_WT0Q4hVW9Bos";
 
                 if (context.Countries.Any(o => o.code == country.code)) continue;
 
                 try
                 {
+                    string correspondingHolidayURL = "https://www.googleapis.com/calendar/v3/calendars/en." + country.code + "%23holiday%40group.v.calendar.google.com/events?key=AIzaSyBpSZoCr4xUGsNzmAuxVw_WT0Q4hVW9Bos";
                     string correspondingHolidays = await GetDataFromAPI(correspondingHolidayURL);
 
                     //getCountryObject
@@ -122,6 +122,11 @@ namespace CountriesAndHolidaysApp.Services
             return new { numberOfRowsAffected = idx };
 
 
+        }
+
+        public string getCountryHolidays(string countryCode)
+        {
+            throw new NotImplementedException();
         }
     }
 }
