@@ -32,7 +32,7 @@ namespace CountriesAndHolidaysApp.Controllers
 
        
 
-        // GET api/<ValuesController>/5
+        // GET method to return specific holidays for a given country
         [HttpGet("{code}")]
         public  string Get(string code)
         {
@@ -48,9 +48,18 @@ namespace CountriesAndHolidaysApp.Controllers
         }
 
         // DELETE api/<ValuesController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        [HttpDelete("{code}/{id}")]
+        public string Delete(string code,int id)
         {
+            if(id < 0 )
+            {
+                return "Bad Request!";
+            }
+            if(srvc.deleteHoliday(code, id))
+            {
+                return "DELETE SUCCESSFUL";
+            }
+            return "DELETE FAILED";
         }
     }
 }

@@ -142,5 +142,23 @@ namespace CountriesAndHolidaysApp.Services
             return JsonConvert.SerializeObject(Holidays);
 
         }
+
+        public bool deleteHoliday(string code , int id)
+        {
+            try
+            {
+                Country country = context.Countries.Where(country => country.code == code).Single();
+                int countryID = country.CountryID;
+                Holiday specificHoliday = context.Holidays.Where(holiday => holiday.countryID == countryID && holiday.ID == id).Single();
+                context.Remove(specificHoliday);
+                context.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+            
+        }
     }
 }

@@ -17,5 +17,7 @@ namespace CountriesAndHolidaysApp.Services
 
         public Task<object> sync();
 
+        public bool deleteHoliday(string code , int id);
+
     }
 }
