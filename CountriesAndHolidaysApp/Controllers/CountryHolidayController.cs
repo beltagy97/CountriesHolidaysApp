@@ -22,12 +22,12 @@ namespace CountriesAndHolidaysApp.Controllers
             srvc = _srvc;
         }
         // GET: api/<ValuesController>
-        [Route("/sync")]
-        [HttpGet]
-        public async Task<object> Get()
+        [HttpPost, Route("sync")]
+        public async Task<object> PostData()
         {
-           object response = await srvc.sync();
+            object response = await srvc.sync();
             return response;
+
         }
 
        
@@ -39,11 +39,7 @@ namespace CountriesAndHolidaysApp.Controllers
             return srvc.getCountryHolidays(code);
         }
 
-        // POST api/<ValuesController>
-        [HttpPost]
-        public void Post([FromBody] string value)
-        {
-        }
+        
 
         // PUT api/<ValuesController>/5
         [HttpPut("{id}")]
