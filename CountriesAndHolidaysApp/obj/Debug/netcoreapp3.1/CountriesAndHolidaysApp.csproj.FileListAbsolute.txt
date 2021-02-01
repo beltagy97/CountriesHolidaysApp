@@ -6,7 +6,6 @@ C:\Users\Ahmad\source\repos\CountriesAndHolidaysApp\CountriesAndHolidaysApp\bin\
 C:\Users\Ahmad\source\repos\CountriesAndHolidaysApp\CountriesAndHolidaysApp\bin\Debug\netcoreapp3.1\CountriesAndHolidaysApp.runtimeconfig.dev.json
 C:\Users\Ahmad\source\repos\CountriesAndHolidaysApp\CountriesAndHolidaysApp\bin\Debug\netcoreapp3.1\CountriesAndHolidaysApp.dll
 C:\Users\Ahmad\source\repos\CountriesAndHolidaysApp\CountriesAndHolidaysApp\bin\Debug\netcoreapp3.1\CountriesAndHolidaysApp.pdb
-C:\Users\Ahmad\source\repos\CountriesAndHolidaysApp\CountriesAndHolidaysApp\bin\Debug\netcoreapp3.1\Humanizer.dll
 C:\Users\Ahmad\source\repos\CountriesAndHolidaysApp\CountriesAndHolidaysApp\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
 C:\Users\Ahmad\source\repos\CountriesAndHolidaysApp\CountriesAndHolidaysApp\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
 C:\Users\Ahmad\source\repos\CountriesAndHolidaysApp\CountriesAndHolidaysApp\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
@@ -23,7 +22,6 @@ C:\Users\Ahmad\source\repos\CountriesAndHolidaysApp\CountriesAndHolidaysApp\bin\
 C:\Users\Ahmad\source\repos\CountriesAndHolidaysApp\CountriesAndHolidaysApp\bin\Debug\netcoreapp3.1\MySqlConnector.dll
 C:\Users\Ahmad\source\repos\CountriesAndHolidaysApp\CountriesAndHolidaysApp\bin\Debug\netcoreapp3.1\Pomelo.EntityFrameworkCore.MySql.dll
 C:\Users\Ahmad\source\repos\CountriesAndHolidaysApp\CountriesAndHolidaysApp\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
-C:\Users\Ahmad\source\repos\CountriesAndHolidaysApp\CountriesAndHolidaysApp\bin\Debug\netcoreapp3.1\System.ComponentModel.Annotations.dll
 C:\Users\Ahmad\source\repos\CountriesAndHolidaysApp\CountriesAndHolidaysApp\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
 C:\Users\Ahmad\source\repos\CountriesAndHolidaysApp\CountriesAndHolidaysApp\obj\Debug\netcoreapp3.1\CountriesAndHolidaysApp.csprojAssemblyReference.cache
 C:\Users\Ahmad\source\repos\CountriesAndHolidaysApp\CountriesAndHolidaysApp\obj\Debug\netcoreapp3.1\CountriesAndHolidaysApp.AssemblyInfoInputs.cache
@@ -39,3 +37,8 @@ C:\Users\Ahmad\source\repos\CountriesAndHolidaysApp\CountriesAndHolidaysApp\obj\
 C:\Users\Ahmad\source\repos\CountriesAndHolidaysApp\CountriesAndHolidaysApp\obj\Debug\netcoreapp3.1\CountriesAndHolidaysApp.pdb
 C:\Users\Ahmad\source\repos\CountriesAndHolidaysApp\CountriesAndHolidaysApp\obj\Debug\netcoreapp3.1\CountriesAndHolidaysApp.genruntimeconfig.cache
 C:\Users\Ahmad\source\repos\CountriesAndHolidaysApp\CountriesAndHolidaysApp\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\Ahmad\source\repos\CountriesAndHolidaysApp\CountriesAndHolidaysApp\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\Ahmad\source\repos\CountriesAndHolidaysApp\CountriesAndHolidaysApp\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
+C:\Users\Ahmad\source\repos\CountriesAndHolidaysApp\CountriesAndHolidaysApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
+C:\Users\Ahmad\source\repos\CountriesAndHolidaysApp\CountriesAndHolidaysApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
+C:\Users\Ahmad\source\repos\CountriesAndHolidaysApp\CountriesAndHolidaysApp\bin\Debug\netcoreapp3.1\Pomelo.JsonObject.dll

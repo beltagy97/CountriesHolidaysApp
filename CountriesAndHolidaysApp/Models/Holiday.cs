@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CountriesAndHolidaysApp.Models
 {
-    public class Holidays
+    public class Holiday
     {
         [Key]
         public int ID { get; set; }
@@ -16,7 +16,5 @@ namespace CountriesAndHolidaysApp.Models
         public String start_date { get; set; }
         [Required]
         public String end_date { get; set; }
-
-       
     }
 }

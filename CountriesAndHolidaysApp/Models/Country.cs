@@ -6,16 +6,12 @@ using System.Threading.Tasks;
 
 namespace CountriesAndHolidaysApp.Models
 {
-    public class Countries
+    public class Country
     {
         [Key]
         public int CountryID { get; set; }
-        [Required]
-        public String Code { get; set; }
-        [Required]
-        public String Name { get; set; }
-
-        public ICollection<Holidays> Holidays { get; set; }
-
+        public String name { get; set; }
+        public String code { get; set; }
+        public ICollection<Holiday> Holidays { get; set; }
     }
 }

@@ -9,28 +9,26 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CountriesAndHolidaysApp.Migrations
 {
     [DbContext(typeof(CountriesAndHolidaysContext))]
-    [Migration("20210131134955_Refactor-DB-relations2")]
-    partial class RefactorDBrelations2
+    [Migration("20210201101253_FixNamingConventions")]
+    partial class FixNamingConventions
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("Relational:MaxIdentifierLength", 64)
-                .HasAnnotation("ProductVersion", "5.0.0");
+                .HasAnnotation("ProductVersion", "3.1.9")
+                .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
-            modelBuilder.Entity("CountriesAndHolidaysApp.Models.Countries", b =>
+            modelBuilder.Entity("CountriesAndHolidaysApp.Models.Country", b =>
                 {
                     b.Property<int>("CountryID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<string>("Code")
-                        .IsRequired()
+                    b.Property<string>("code")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
-                    b.Property<string>("Name")
-                        .IsRequired()
+                    b.Property<string>("name")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.HasKey("CountryID");
@@ -38,16 +36,13 @@ namespace CountriesAndHolidaysApp.Migrations
                     b.ToTable("Countries");
                 });
 
-            modelBuilder.Entity("CountriesAndHolidaysApp.Models.Holidays", b =>
+            modelBuilder.Entity("CountriesAndHolidaysApp.Models.Holiday", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int?>("CountriesCountryID")
-                        .HasColumnType("int");
-
-                    b.Property<int>("CountryID")
+                    b.Property<int?>("CountryID")
                         .HasColumnType("int");
 
                     b.Property<string>("Name")
@@ -64,21 +59,16 @@ namespace CountriesAndHolidaysApp.Migrations
 
                     b.HasKey("ID");
 
-                    b.HasIndex("CountriesCountryID");
+                    b.HasIndex("CountryID");
 
                     b.ToTable("Holidays");
                 });
 
-            modelBuilder.Entity("CountriesAndHolidaysApp.Models.Holidays", b =>
+            modelBuilder.Entity("CountriesAndHolidaysApp.Models.Holiday", b =>
                 {
-                    b.HasOne("CountriesAndHolidaysApp.Models.Countries", null)
+                    b.HasOne("CountriesAndHolidaysApp.Models.Country", null)
                         .WithMany("Holidays")
-                        .HasForeignKey("CountriesCountryID");
-                });
-
-            modelBuilder.Entity("CountriesAndHolidaysApp.Models.Countries", b =>
-                {
-                    b.Navigation("Holidays");
+                        .HasForeignKey("CountryID");
                 });
 #pragma warning restore 612, 618
         }

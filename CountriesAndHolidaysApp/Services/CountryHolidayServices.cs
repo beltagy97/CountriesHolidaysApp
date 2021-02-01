@@ -23,12 +23,12 @@ namespace CountriesAndHolidaysApp.Services
             return "404";
         }
 
-            public IList<Holidays> HolidayJSONParser(string response)
+            public IList<Holiday> HolidayJSONParser(string response)
         {
             JArray holidaysArr = (JArray)JObject.Parse(response)["items"];
 
-            IList<Holidays> holidays = null;
-            holidays = holidaysArr.Select(p => new Holidays
+            IList<Holiday> holidays = null;
+            holidays = holidaysArr.Select(p => new Holiday
             {
                 Name = (string)p["summary"],
                 start_date = (string)p["start"]["date"],
@@ -39,15 +39,15 @@ namespace CountriesAndHolidaysApp.Services
             return holidays;
         }
 
-        public IList<Countries> CountryJSONParser(string response)
+        public IList<Country> CountryJSONParser(string response)
         {
             JArray countriesArr = (JArray)JObject.Parse(response)["result"];
 
-            IList<Countries> countries = null;
-            countries = countriesArr.Select(p => new Countries
+            IList<Country> countries = null;
+            countries = countriesArr.Select(p => new Country
             {
-                Name = (string)p["name"],
-                Code = (string)p["code"]
+                name = (string)p["name"],
+                code = (string)p["code"]
 
             }).ToList();
 
@@ -55,46 +55,60 @@ namespace CountriesAndHolidaysApp.Services
         }
 
 
+
+        public Country getCountryObject(string countryCode , string countryName , string correspondingHolidays)
+        {
+            Country newCountry = new Country();
+            newCountry.code = countryCode;
+            newCountry.name = countryName;
+
+
+            if (correspondingHolidays == "404")
+            {
+                return newCountry;
+            }
+
+            IList<Holiday> holidays = HolidayJSONParser(correspondingHolidays);
+            newCountry.Holidays = holidays;
+
+            return newCountry;
+        }
+
+
         public async Task<object> sync(CountriesAndHolidaysContext context)
         {
             string countriesResponse = await GetDataFromAPI("https://api.printful.com/countries");
-            IList<Countries> countries = CountryJSONParser(countriesResponse);
+            IList<Country> countries = CountryJSONParser(countriesResponse);
 
             int idx = 0;
-            foreach(Countries country in countries)
+            foreach(Country country in countries)
             {
                 
-                string correspondingHolidayURL = "https://www.googleapis.com/calendar/v3/calendars/en." + country.Code + "%23holiday%40group.v.calendar.google.com/events?key=AIzaSyBpSZoCr4xUGsNzmAuxVw_WT0Q4hVW9Bos";
+                string correspondingHolidayURL = "https://www.googleapis.com/calendar/v3/calendars/en." + country.code + "%23holiday%40group.v.calendar.google.com/events?key=AIzaSyBpSZoCr4xUGsNzmAuxVw_WT0Q4hVW9Bos";
 
-                if (context.Countries.Any(o => o.Code == country.Code)) continue;
+                if (context.Countries.Any(o => o.code == country.code)) continue;
                 
                 try
                 {
                     string correspondingHolidays = await GetDataFromAPI(correspondingHolidayURL);
-                    if (correspondingHolidays == "404") continue;
-                    idx++;
-                    IList<Holidays> holidays = HolidayJSONParser(correspondingHolidays);
-                    
 
-                    var newCountry = new Countries
-                    {
-                        Code = country.Code,
-                        Name = country.Name,
-                        Holidays = holidays
-                    };
+                    //getCountryObject
+
+                    Country newCountry = null;
+                    newCountry = getCountryObject(country.code, country.name, correspondingHolidays);
 
                     context.Add(newCountry);
                     context.SaveChanges();
+                    idx++;
 
-                    
-
-                }catch(Exception e)
+                }
+                catch(Exception e)
                 {
                     return new { error = e };
                 }
             }
 
-
+            
             return new {numberOfRowsAffected = idx };
 
 

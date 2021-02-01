@@ -10,9 +10,9 @@ namespace CountriesAndHolidaysApp.Services
     {
         Task<String> GetDataFromAPI(String url);
 
-        public IList<Countries> CountryJSONParser(string response);
+        public IList<Country> CountryJSONParser(string response);
 
-        public IList<Holidays> HolidayJSONParser(string response);
+        public IList<Holiday> HolidayJSONParser(string response);
 
         public Task<object> sync(CountriesAndHolidaysContext context);
 
