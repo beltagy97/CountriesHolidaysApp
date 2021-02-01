@@ -1,4 +1,5 @@
 ﻿using CountriesAndHolidaysApp.Models;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace CountriesAndHolidaysApp.Services
 {
-    public class CountryHolidayServices : ICountryHolidayServices
+    public class CountryHolidayServices :  ICountryHolidayServices
     {
         private readonly CountriesAndHolidaysContext context;
 
@@ -126,7 +127,20 @@ namespace CountriesAndHolidaysApp.Services
 
         public string getCountryHolidays(string countryCode)
         {
-            throw new NotImplementedException();
+            IList<CountryHolidayResultSet> Holidays = context.Countries.Join(context.Holidays,
+                country => country.CountryID,
+                holiday => holiday.countryID,
+                (country, holiday) => new CountryHolidayResultSet
+                {
+                    countryName = country.name,
+                    code = country.code,
+                    holidayName = holiday.Name,
+                    start_date = holiday.start_date,
+                    end_date = holiday.end_date
+                }).Where(o => o.code == countryCode).ToList();
+
+            return JsonConvert.SerializeObject(Holidays);
+
         }
     }
 }
