@@ -21,5 +21,7 @@ namespace CountriesAndHolidaysApp.Services
 
         public bool AddHoliday(Holiday newHoliday);
 
+        public bool ModifyHoliday(int id, Holiday newHoliday);
+
     }
 }

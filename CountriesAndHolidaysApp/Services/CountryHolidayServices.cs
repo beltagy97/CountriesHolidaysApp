@@ -165,11 +165,55 @@ namespace CountriesAndHolidaysApp.Services
         {
             try
             {
+                //checks if countryID is available
                 Country country = context.Countries.Where(country => country.CountryID == newHoliday.countryID).Single();
 
                 context.Add(newHoliday);
                 context.SaveChanges();
                 
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool checkCountryID(int cID)
+        {
+            try
+            {
+
+                Country country = context.Countries.Where(country => country.CountryID == cID).Single();
+                
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool ModifyHoliday(int id, Holiday newHoliday)
+        {
+            try
+            {
+               
+                Holiday desiredHoliday = context.Holidays.Find(id);
+                
+                if (desiredHoliday == null) return false;
+                
+                
+                if (!checkCountryID(newHoliday.countryID)) return false;
+
+                desiredHoliday.Name = newHoliday.Name;
+                desiredHoliday.start_date = newHoliday.start_date;
+                desiredHoliday.end_date = newHoliday.end_date;
+                desiredHoliday.countryID = newHoliday.countryID;
+
+               
+                context.SaveChanges();
+
                 return true;
             }
             catch

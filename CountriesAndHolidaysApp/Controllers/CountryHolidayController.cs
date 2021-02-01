@@ -21,6 +21,15 @@ namespace CountriesAndHolidaysApp.Controllers
         {
             srvc = _srvc;
         }
+
+        // GET method to return specific holidays for a given country
+        [HttpGet("{code}")]
+        public string Get(string code)
+        {
+            return srvc.getCountryHolidays(code);
+        }
+
+
         // GET: api/<ValuesController>
         [HttpPost, Route("sync")]
         public async Task<object> PostData()
@@ -41,20 +50,12 @@ namespace CountriesAndHolidaysApp.Controllers
         }
 
 
-
-        // GET method to return specific holidays for a given country
-        [HttpGet("{code}")]
-        public  string Get(string code)
-        {
-            return srvc.getCountryHolidays(code);
-        }
-
-        
-
-        // PUT api/<ValuesController>/5
+        // PUT MODIFY AN EXISTING HOLIDAY
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public string Put(int id, [FromBody] Holiday newHoliday)
         {
+            if(srvc.ModifyHoliday(id,newHoliday)) return "Record Modified";
+            return "COULD NOT MODIFY RECORD";
         }
 
         // DELETE api/<ValuesController>/5
