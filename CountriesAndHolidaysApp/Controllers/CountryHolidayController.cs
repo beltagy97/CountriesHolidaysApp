@@ -21,6 +21,7 @@ namespace CountriesAndHolidaysApp.Controllers
             srvc = _srvc;
         }
         // GET: api/<ValuesController>
+        [Route("/sync")]
         [HttpGet]
         public async Task<object> Get()
         {
