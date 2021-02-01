@@ -160,5 +160,22 @@ namespace CountriesAndHolidaysApp.Services
             }
             
         }
+
+        public bool AddHoliday(Holiday newHoliday)
+        {
+            try
+            {
+                Country country = context.Countries.Where(country => country.CountryID == newHoliday.countryID).Single();
+
+                context.Add(newHoliday);
+                context.SaveChanges();
+                
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
     }
 }

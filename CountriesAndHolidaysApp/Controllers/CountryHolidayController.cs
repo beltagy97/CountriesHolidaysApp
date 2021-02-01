@@ -30,7 +30,17 @@ namespace CountriesAndHolidaysApp.Controllers
 
         }
 
-       
+
+        // POST: new holiday
+        [HttpPost, Route("add")]
+        public string PostHoliday([FromBody] Holiday newHoliday)
+        {
+            if (srvc.AddHoliday(newHoliday)) return "SUCESS";
+            return "FAILURE";
+
+        }
+
+
 
         // GET method to return specific holidays for a given country
         [HttpGet("{code}")]

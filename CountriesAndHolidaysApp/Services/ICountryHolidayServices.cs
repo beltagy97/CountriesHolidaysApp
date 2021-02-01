@@ -19,5 +19,7 @@ namespace CountriesAndHolidaysApp.Services
 
         public bool deleteHoliday(string code , int id);
 
+        public bool AddHoliday(Holiday newHoliday);
+
     }
 }
