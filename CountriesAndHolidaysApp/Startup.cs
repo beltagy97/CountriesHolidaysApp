@@ -13,7 +13,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Pomelo.EntityFrameworkCore.MySql;
-
+using CountriesAndHolidaysApp.Services;
 
 namespace CountriesAndHolidaysApp
 {
@@ -31,6 +31,7 @@ namespace CountriesAndHolidaysApp
         {
             string mySqlConnectionStr = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContextPool<CountriesAndHolidaysContext>(options => options.UseMySql(mySqlConnectionStr));
+            services.AddScoped<ICountryHolidayServices, CountryHolidayServices>();
             services.AddControllers();
         }
 

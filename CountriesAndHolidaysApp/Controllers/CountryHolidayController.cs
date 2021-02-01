@@ -14,18 +14,17 @@ namespace CountriesAndHolidaysApp.Controllers
     [ApiController]
     public class CountryHolidayController : ControllerBase
     {
-        private CountriesAndHolidaysContext CountryHolidayContext;
-        private CountryHolidayServices srvc;
-        public CountryHolidayController(CountriesAndHolidaysContext cntxt)
+        
+        private readonly ICountryHolidayServices srvc;
+        public CountryHolidayController(ICountryHolidayServices _srvc)
         {
-            CountryHolidayContext = cntxt;
-            srvc = new CountryHolidayServices();
+            srvc = _srvc;
         }
         // GET: api/<ValuesController>
         [HttpGet]
         public async Task<object> Get()
         {
-           object response = await srvc.sync(CountryHolidayContext);
+           object response = await srvc.sync();
             return response;
         }
 

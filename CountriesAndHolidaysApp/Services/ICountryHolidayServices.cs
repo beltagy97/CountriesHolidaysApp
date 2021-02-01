@@ -6,15 +6,16 @@ using System.Threading.Tasks;
 
 namespace CountriesAndHolidaysApp.Services
 {
-    interface ICountryHolidayServices
+     public interface ICountryHolidayServices
     {
+
         Task<String> GetDataFromAPI(String url);
 
         public IList<Country> CountryJSONParser(string response);
 
         public IList<Holiday> HolidayJSONParser(string response);
 
-        public Task<object> sync(CountriesAndHolidaysContext context);
+        public Task<object> sync();
 
     }
 }

@@ -10,6 +10,14 @@ namespace CountriesAndHolidaysApp.Services
 {
     public class CountryHolidayServices : ICountryHolidayServices
     {
+        private readonly CountriesAndHolidaysContext context;
+
+        public CountryHolidayServices(CountriesAndHolidaysContext ctx)
+        {
+            context = ctx;
+        }
+
+
         public async Task<string> GetDataFromAPI(string url)
         {
             HttpClient client = new HttpClient();
@@ -56,7 +64,7 @@ namespace CountriesAndHolidaysApp.Services
 
 
 
-        public Country getCountryObject(string countryCode , string countryName , string correspondingHolidays)
+        public Country getCountryObject(string countryCode, string countryName, string correspondingHolidays)
         {
             Country newCountry = new Country();
             newCountry.code = countryCode;
@@ -75,19 +83,19 @@ namespace CountriesAndHolidaysApp.Services
         }
 
 
-        public async Task<object> sync(CountriesAndHolidaysContext context)
+        public async Task<object> sync()
         {
             string countriesResponse = await GetDataFromAPI("https://api.printful.com/countries");
             IList<Country> countries = CountryJSONParser(countriesResponse);
 
             int idx = 0;
-            foreach(Country country in countries)
+            foreach (Country country in countries)
             {
-                
+
                 string correspondingHolidayURL = "https://www.googleapis.com/calendar/v3/calendars/en." + country.code + "%23holiday%40group.v.calendar.google.com/events?key=AIzaSyBpSZoCr4xUGsNzmAuxVw_WT0Q4hVW9Bos";
 
                 if (context.Countries.Any(o => o.code == country.code)) continue;
-                
+
                 try
                 {
                     string correspondingHolidays = await GetDataFromAPI(correspondingHolidayURL);
@@ -97,19 +105,21 @@ namespace CountriesAndHolidaysApp.Services
                     Country newCountry = null;
                     newCountry = getCountryObject(country.code, country.name, correspondingHolidays);
 
+
                     context.Add(newCountry);
                     context.SaveChanges();
                     idx++;
 
                 }
-                catch(Exception e)
+                catch (Exception e)
                 {
+                    //Console.WriteLine(e);
                     return new { error = e };
                 }
             }
 
-            
-            return new {numberOfRowsAffected = idx };
+
+            return new { numberOfRowsAffected = idx };
 
 
         }
