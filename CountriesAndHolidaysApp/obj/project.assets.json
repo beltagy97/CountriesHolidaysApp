@@ -309,6 +309,21 @@
         "runtime": {
           "lib/netstandard1.3/System.Diagnostics.DiagnosticSource.dll": {}
         }
+      },
+      "Data/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "3.1.9",
+          "Newtonsoft.Json": "12.0.3",
+          "Pomelo.EntityFrameworkCore.MySql": "3.2.3"
+        },
+        "compile": {
+          "bin/placeholder/Data.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Data.dll": {}
+        }
       }
     }
   },
@@ -930,10 +945,16 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "Data/1.0.0": {
+      "type": "project",
+      "path": "../Data/Data.csproj",
+      "msbuildProject": "../Data/Data.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "Data >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 3.1.9",
       "Microsoft.EntityFrameworkCore.Tools >= 3.1.9",
       "Newtonsoft.Json >= 12.0.3",
@@ -946,11 +967,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Ahmad\\source\\repos\\CountriesAndHolidaysApp\\CountriesAndHolidaysApp\\CountriesAndHolidaysApp.csproj",
+      "projectUniqueName": "C:\\Users\\Ahmad\\source\\repos\\CountriesHolidaysApp\\CountriesAndHolidaysApp\\CountriesAndHolidaysApp.csproj",
       "projectName": "CountriesAndHolidaysApp",
-      "projectPath": "C:\\Users\\Ahmad\\source\\repos\\CountriesAndHolidaysApp\\CountriesAndHolidaysApp\\CountriesAndHolidaysApp.csproj",
+      "projectPath": "C:\\Users\\Ahmad\\source\\repos\\CountriesHolidaysApp\\CountriesAndHolidaysApp\\CountriesAndHolidaysApp.csproj",
       "packagesPath": "C:\\Users\\Ahmad\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Ahmad\\source\\repos\\CountriesAndHolidaysApp\\CountriesAndHolidaysApp\\obj\\",
+      "outputPath": "C:\\Users\\Ahmad\\source\\repos\\CountriesHolidaysApp\\CountriesAndHolidaysApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Ahmad\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -966,7 +987,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Ahmad\\source\\repos\\CountriesHolidaysApp\\Data\\Data.csproj": {
+              "projectPath": "C:\\Users\\Ahmad\\source\\repos\\CountriesHolidaysApp\\Data\\Data.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

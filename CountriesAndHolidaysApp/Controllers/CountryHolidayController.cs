@@ -1,11 +1,11 @@
-﻿using CountriesAndHolidaysApp.Models;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using CountriesAndHolidaysApp.Services;
 using Newtonsoft.Json;
+using Data.Models;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -15,6 +15,7 @@ namespace CountriesAndHolidaysApp.Controllers
     [ApiController]
     public class CountryHolidayController : ControllerBase
     {
+        //make sure that resource is restful
 
         private readonly ICountryHolidayServices srvc;
         public CountryHolidayController(ICountryHolidayServices _srvc)

@@ -1,4 +1,5 @@
-﻿using CountriesAndHolidaysApp.Models;
+﻿using Data.Context;
+using Data.Models;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
@@ -86,6 +87,7 @@ namespace CountriesAndHolidaysApp.Services
 
         public async Task<object> sync()
         {
+            //move the url to settings
             string countriesResponse = await GetDataFromAPI("https://api.printful.com/countries");
             IList<Country> countries = CountryJSONParser(countriesResponse);
 
@@ -230,6 +232,7 @@ namespace CountriesAndHolidaysApp.Services
 
         public string getCountries(int pageNumber)
         {
+            //move page size as parameter
             int skippedPages = (pageNumber - 1) * 50;
             var countries = context.Countries.Skip(skippedPages).Take(50).Select(country =>  new {Name = country.name, Code = country.code }).ToList();
             return JsonConvert.SerializeObject(countries);
