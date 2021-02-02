@@ -9,19 +9,16 @@ namespace CountriesAndHolidaysApp.Services
      public interface ICountryHolidayServices
     {
         public string getCountryHolidays(string countryCode);
-        Task<String> GetDataFromAPI(String url);
-
-        public IList<Country> CountryJSONParser(string response);
-
-        public IList<Holiday> HolidayJSONParser(string response);
 
         public Task<object> sync();
 
         public bool deleteHoliday(string code , int id);
 
-        public bool AddHoliday(Holiday newHoliday);
+        public bool addHoliday(Holiday newHoliday);
 
-        public bool ModifyHoliday(int id, Holiday newHoliday);
+        public bool modifyHoliday(int id, Holiday newHoliday);
+
+        public bool getCountries(int pageNumber);
 
     }
 }

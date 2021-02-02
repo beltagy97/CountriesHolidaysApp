@@ -161,7 +161,7 @@ namespace CountriesAndHolidaysApp.Services
             
         }
 
-        public bool AddHoliday(Holiday newHoliday)
+        public bool addHoliday(Holiday newHoliday)
         {
             try
             {
@@ -194,7 +194,7 @@ namespace CountriesAndHolidaysApp.Services
             }
         }
 
-        public bool ModifyHoliday(int id, Holiday newHoliday)
+        public bool modifyHoliday(int id, Holiday newHoliday)
         {
             try
             {

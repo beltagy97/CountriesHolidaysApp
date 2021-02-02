@@ -44,7 +44,7 @@ namespace CountriesAndHolidaysApp.Controllers
         [HttpPost, Route("add")]
         public string PostHoliday([FromBody] Holiday newHoliday)
         {
-            if (srvc.AddHoliday(newHoliday)) return "SUCESS";
+            if (srvc.addHoliday(newHoliday)) return "SUCESS";
             return "FAILURE";
 
         }
@@ -54,7 +54,7 @@ namespace CountriesAndHolidaysApp.Controllers
         [HttpPut("{id}")]
         public string Put(int id, [FromBody] Holiday newHoliday)
         {
-            if(srvc.ModifyHoliday(id,newHoliday)) return "Record Modified";
+            if(srvc.modifyHoliday(id,newHoliday)) return "Record Modified";
             return "COULD NOT MODIFY RECORD";
         }
 
