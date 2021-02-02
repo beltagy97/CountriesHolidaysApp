@@ -53,8 +53,8 @@ namespace CountriesAndHolidaysApp.Controllers
 
 
         // POST method to add a holiday
-        // ROUTE : api/countryHoliday/add
-        [HttpPost, Route("add")]
+        // ROUTE : api/countryHoliday
+        [HttpPost]
         public string PostHoliday([FromBody] Holiday newHoliday)
         {
             return srvc.addHoliday(newHoliday);
@@ -73,13 +73,13 @@ namespace CountriesAndHolidaysApp.Controllers
         // DELETE method to delete a holiday
         // ROUTE : api/countryHoliday/{code}/{id}
         [HttpDelete("{code}/{id}")]
-        public string Delete(string code,int id)
+        public string Delete(string code,int holidayId)
         {
-            if(id < 0 )
+            if(holidayId < 0 )
             {
                 return JsonConvert.SerializeObject(new { message = "Bad Request!" }); 
             }
-            return srvc.deleteHoliday(code, id);
+            return srvc.deleteHoliday(code, holidayId);
             
         }
     }
