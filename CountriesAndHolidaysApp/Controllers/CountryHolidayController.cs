@@ -33,10 +33,10 @@ namespace CountriesAndHolidaysApp.Controllers
 
         // GET method to return list of Countries
         // ROUTE : api/countryHoliday/page/{pageNumber}
-        [HttpGet("page/{pageNumber}")]
-        public string GetCountryList(int pageNumber)
+        [HttpGet("page/{pageNumber}/{pageSize}")]
+        public string GetCountryList(int pageNumber,int pageSize)
         {
-            return srvc.getCountries(pageNumber);
+            return srvc.getCountries(pageNumber,pageSize);
         }
 
 

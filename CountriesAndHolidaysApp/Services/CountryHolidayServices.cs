@@ -149,7 +149,8 @@ namespace CountriesAndHolidaysApp.Services
         {
             try
             {
-                Country country = context.Countries.Where(country => country.code == code).Single();
+                Country country = context.Countries.Where(country => country.code == code).SingleOrDefault();
+                if(country == null) return JsonConvert.SerializeObject(new { message = "DELETE FAILED" });
                 int countryID = country.CountryID;
                 Holiday specificHoliday = context.Holidays.Where(holiday => holiday.countryID == countryID && holiday.ID == id).Single();
                 context.Remove(specificHoliday);
@@ -168,13 +169,12 @@ namespace CountriesAndHolidaysApp.Services
             try
             {
                 //checks if countryID is available
-                Country country = context.Countries.Where(country => country.CountryID == newHoliday.countryID).Single();
+                Country country = context.Countries.Where(country => country.CountryID == newHoliday.countryID).SingleOrDefault();
+                if(country == null) return JsonConvert.SerializeObject(new { message = "DELETE FAILED" });
 
                 context.Add(newHoliday);
                 context.SaveChanges();
 
-                
-                
 
                 return JsonConvert.SerializeObject(new { message = "Success" });
             }
@@ -189,8 +189,8 @@ namespace CountriesAndHolidaysApp.Services
             try
             {
 
-                Country country = context.Countries.Where(country => country.CountryID == cID).Single();
-                return true;
+                Country country = context.Countries.Where(country => country.CountryID == cID).SingleOrDefault();
+                return country == null ? false : true;
             }
             catch
             {
@@ -230,11 +230,11 @@ namespace CountriesAndHolidaysApp.Services
 
         
 
-        public string getCountries(int pageNumber)
+        public string getCountries(int pageNumber,int pageSize = 50)
         {
             //move page size as parameter
-            int skippedPages = (pageNumber - 1) * 50;
-            var countries = context.Countries.Skip(skippedPages).Take(50).Select(country =>  new {Name = country.name, Code = country.code }).ToList();
+            int skippedPages = (pageNumber - 1) * pageSize;
+            var countries = context.Countries.Skip(skippedPages).Take(pageSize).Select(country =>  new {Name = country.name, Code = country.code }).ToList();
             return JsonConvert.SerializeObject(countries);
         }
     }
