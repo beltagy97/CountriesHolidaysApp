@@ -32,7 +32,7 @@ namespace CountriesAndHolidaysApp.Services
             return "404";
         }
 
-            public IList<Holiday> HolidayJSONParser(string response)
+        public IList<Holiday> HolidayJSONParser(string response)
         {
             JArray holidaysArr = (JArray)JObject.Parse(response)["items"];
 
@@ -185,7 +185,6 @@ namespace CountriesAndHolidaysApp.Services
             {
 
                 Country country = context.Countries.Where(country => country.CountryID == cID).Single();
-                
                 return true;
             }
             catch
@@ -220,6 +219,15 @@ namespace CountriesAndHolidaysApp.Services
             {
                 return false;
             }
+        }
+
+        
+
+        public string getCountries(int pageNumber)
+        {
+            int skippedPages = (pageNumber - 1) * 50;
+            var countries = context.Countries.Skip(skippedPages).Take(50).Select(country =>  new {Name = country.name, Code = country.code }).ToList();
+            return JsonConvert.SerializeObject(countries);
         }
     }
 }

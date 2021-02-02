@@ -15,7 +15,7 @@ namespace CountriesAndHolidaysApp.Controllers
     [ApiController]
     public class CountryHolidayController : ControllerBase
     {
-        
+
         private readonly ICountryHolidayServices srvc;
         public CountryHolidayController(ICountryHolidayServices _srvc)
         {
@@ -28,6 +28,15 @@ namespace CountriesAndHolidaysApp.Controllers
         {
             return srvc.getCountryHolidays(code);
         }
+
+        // GET method to return list of Countries
+        // ROUTE : api/countryHoliday/page/{pageNumber}
+        [HttpGet("page/{pageNumber}")]
+        public string GetCountryList(int pageNumber)
+        {
+            return srvc.getCountries(pageNumber);
+        }
+
 
 
         // GET: api/<ValuesController>

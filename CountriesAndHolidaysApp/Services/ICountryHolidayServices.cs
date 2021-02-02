@@ -18,7 +18,7 @@ namespace CountriesAndHolidaysApp.Services
 
         public bool modifyHoliday(int id, Holiday newHoliday);
 
-        public bool getCountries(int pageNumber);
+        public string getCountries(int pageNumber);
 
     }
 }
