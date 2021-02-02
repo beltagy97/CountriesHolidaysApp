@@ -23,6 +23,7 @@ namespace CountriesAndHolidaysApp.Controllers
         }
 
         // GET method to return specific holidays for a given country
+        // ROUTE : api/countryHoliday/{code}
         [HttpGet("{code}")]
         public string Get(string code)
         {
@@ -39,7 +40,8 @@ namespace CountriesAndHolidaysApp.Controllers
 
 
 
-        // GET: api/<ValuesController>
+        // POST method to sync data from external APIs
+        // ROUTE : api/countryHoliday/sync
         [HttpPost, Route("sync")]
         public async Task<object> PostData()
         {
@@ -49,37 +51,35 @@ namespace CountriesAndHolidaysApp.Controllers
         }
 
 
-        // POST: new holiday
+        // POST method to add a holiday
+        // ROUTE : api/countryHoliday/add
         [HttpPost, Route("add")]
         public string PostHoliday([FromBody] Holiday newHoliday)
         {
-            if (srvc.addHoliday(newHoliday)) return "SUCESS";
-            return "FAILURE";
-
+            return srvc.addHoliday(newHoliday);
         }
 
 
-        // PUT MODIFY AN EXISTING HOLIDAY
+        // Put method to modify an existing holiday
+        // ROUTE : api/countryHoliday/{holidayID}
         [HttpPut("{id}")]
         public string Put(int id, [FromBody] Holiday newHoliday)
         {
-            if(srvc.modifyHoliday(id,newHoliday)) return "Record Modified";
-            return "COULD NOT MODIFY RECORD";
+            return srvc.modifyHoliday(id, newHoliday);
+            
         }
 
-        // DELETE api/<ValuesController>/5
+        // DELETE method to delete a holiday
+        // ROUTE : api/countryHoliday/{code}/{id}
         [HttpDelete("{code}/{id}")]
         public string Delete(string code,int id)
         {
             if(id < 0 )
             {
-                return "Bad Request!";
+                return JsonConvert.SerializeObject(new { message = "Bad Request!" }); 
             }
-            if(srvc.deleteHoliday(code, id))
-            {
-                return "DELETE SUCCESSFUL";
-            }
-            return "DELETE FAILED";
+            return srvc.deleteHoliday(code, id);
+            
         }
     }
 }

@@ -12,11 +12,11 @@ namespace CountriesAndHolidaysApp.Services
 
         public Task<object> sync();
 
-        public bool deleteHoliday(string code , int id);
+        public string deleteHoliday(string code , int id);
 
-        public bool addHoliday(Holiday newHoliday);
+        public string addHoliday(Holiday newHoliday);
 
-        public bool modifyHoliday(int id, Holiday newHoliday);
+        public string modifyHoliday(int id, Holiday newHoliday);
 
         public string getCountries(int pageNumber);
 
