@@ -1,5 +1,5 @@
 ﻿using Data.Context;
-using Data.Models;
+using Models;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Repository.Implementations;

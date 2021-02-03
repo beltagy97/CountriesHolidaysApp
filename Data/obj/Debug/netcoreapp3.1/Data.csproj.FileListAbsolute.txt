@@ -10,3 +10,6 @@ C:\Users\Ahmad\source\repos\CountriesHolidaysApp\Data\obj\Debug\netcoreapp3.1\Da
 C:\Users\Ahmad\source\repos\CountriesHolidaysApp\Data\obj\Debug\netcoreapp3.1\Data.dll
 C:\Users\Ahmad\source\repos\CountriesHolidaysApp\Data\obj\Debug\netcoreapp3.1\Data.pdb
 C:\Users\Ahmad\source\repos\CountriesHolidaysApp\Data\obj\Debug\netcoreapp3.1\Data.genruntimeconfig.cache
+C:\Users\Ahmad\source\repos\CountriesHolidaysApp\Data\bin\Debug\netcoreapp3.1\Models.dll
+C:\Users\Ahmad\source\repos\CountriesHolidaysApp\Data\bin\Debug\netcoreapp3.1\Models.pdb
+C:\Users\Ahmad\source\repos\CountriesHolidaysApp\Data\obj\Debug\netcoreapp3.1\Data.csproj.CopyComplete

@@ -12,3 +12,5 @@ C:\Users\Ahmad\source\repos\CountriesHolidaysApp\Services\obj\Debug\netcoreapp3.
 C:\Users\Ahmad\source\repos\CountriesHolidaysApp\Services\obj\Debug\netcoreapp3.1\Services.pdb
 C:\Users\Ahmad\source\repos\CountriesHolidaysApp\Services\bin\Debug\netcoreapp3.1\Repository.dll
 C:\Users\Ahmad\source\repos\CountriesHolidaysApp\Services\bin\Debug\netcoreapp3.1\Repository.pdb
+C:\Users\Ahmad\source\repos\CountriesHolidaysApp\Services\bin\Debug\netcoreapp3.1\Models.dll
+C:\Users\Ahmad\source\repos\CountriesHolidaysApp\Services\bin\Debug\netcoreapp3.1\Models.pdb

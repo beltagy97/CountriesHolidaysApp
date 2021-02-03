@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
 
-namespace Data.Models
+namespace Models
 {
     public class Holiday
     {
@@ -16,6 +16,5 @@ namespace Data.Models
         [Required]
         public String end_date { get; set; }
         public int countryID { get; set; }
-
     }
 }

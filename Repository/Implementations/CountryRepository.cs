@@ -1,5 +1,5 @@
 ﻿using Data.Context;
-using Data.Models;
+using Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -12,7 +12,7 @@ namespace Repository.Implementations
     {
 
         private readonly CountriesAndHolidaysContext context;
-        internal DbSet<Country> dbSet;
+        private readonly DbSet<Country> dbSet;
 
 
         public CountryRepository(CountriesAndHolidaysContext context)
@@ -34,16 +34,16 @@ namespace Repository.Implementations
         }
 
 
-        public object getCountriesList(int pageNumber, int pageSize)
+        public List<Country> getCountriesList(int pageNumber, int pageSize)
         {
             int skippedPages = (pageNumber - 1) * pageSize;
-            return context.Countries.Skip(skippedPages).Take(pageSize).Select(country => new { Name = country.name, Code = country.code }).ToList();
+            return context.Countries.Skip(skippedPages).Take(pageSize).Select(country => new Country{ name = country.name, code = country.code }).ToList();
         }
 
-        public IList<CountryHolidayResultSet> getCountryHolidays(string code)
+        public List<CountryHolidayResultSet> getCountryHolidays(string code)
         {
 
-            IList<CountryHolidayResultSet> Holidays = this.dbSet.Join(context.Holidays,
+            List<CountryHolidayResultSet> Holidays = this.dbSet.Join(context.Holidays,
                 country => country.CountryID,
                 holiday => holiday.countryID,
                 (country, holiday) => new CountryHolidayResultSet
