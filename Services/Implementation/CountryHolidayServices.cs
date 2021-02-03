@@ -104,8 +104,8 @@ namespace Services.Implementation
                     string correspondingHolidayURL = "https://www.googleapis.com/calendar/v3/calendars/en." + country.code + "%23holiday%40group.v.calendar.google.com/events?key=AIzaSyBpSZoCr4xUGsNzmAuxVw_WT0Q4hVW9Bos";
                     string correspondingHolidays = await GetDataFromAPI(correspondingHolidayURL);
 
-                    //getCountryObject
 
+                    //getCountryObject
                     Country newCountry = null;
                     newCountry = getCountryObject(country.code, country.name, correspondingHolidays);
 
@@ -117,7 +117,6 @@ namespace Services.Implementation
                 }
                 catch (Exception e)
                 {
-                    //Console.WriteLine(e);
                     return new { error = e };
                 }
             }

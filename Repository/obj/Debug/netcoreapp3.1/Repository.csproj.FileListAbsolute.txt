@@ -1,0 +1,9 @@
+C:\Users\Ahmad\source\repos\CountriesHolidaysApp\Repository\bin\Debug\netcoreapp3.1\Repository.deps.json
+C:\Users\Ahmad\source\repos\CountriesHolidaysApp\Repository\bin\Debug\netcoreapp3.1\Repository.dll
+C:\Users\Ahmad\source\repos\CountriesHolidaysApp\Repository\bin\Debug\netcoreapp3.1\Repository.pdb
+C:\Users\Ahmad\source\repos\CountriesHolidaysApp\Repository\obj\Debug\netcoreapp3.1\Repository.csprojAssemblyReference.cache
+C:\Users\Ahmad\source\repos\CountriesHolidaysApp\Repository\obj\Debug\netcoreapp3.1\Repository.AssemblyInfoInputs.cache
+C:\Users\Ahmad\source\repos\CountriesHolidaysApp\Repository\obj\Debug\netcoreapp3.1\Repository.AssemblyInfo.cs
+C:\Users\Ahmad\source\repos\CountriesHolidaysApp\Repository\obj\Debug\netcoreapp3.1\Repository.csproj.CoreCompileInputs.cache
+C:\Users\Ahmad\source\repos\CountriesHolidaysApp\Repository\obj\Debug\netcoreapp3.1\Repository.dll
+C:\Users\Ahmad\source\repos\CountriesHolidaysApp\Repository\obj\Debug\netcoreapp3.1\Repository.pdb

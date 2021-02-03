@@ -325,6 +325,16 @@
           "bin/placeholder/Data.dll": {}
         }
       },
+      "Repository/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/Repository.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Repository.dll": {}
+        }
+      },
       "Services/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
@@ -964,6 +974,11 @@
       "path": "../Data/Data.csproj",
       "msbuildProject": "../Data/Data.csproj"
     },
+    "Repository/1.0.0": {
+      "type": "project",
+      "path": "../Repository/Repository.csproj",
+      "msbuildProject": "../Repository/Repository.csproj"
+    },
     "Services/1.0.0": {
       "type": "project",
       "path": "../Services/Services.csproj",
@@ -977,6 +992,7 @@
       "Microsoft.EntityFrameworkCore.Tools >= 3.1.9",
       "Newtonsoft.Json >= 12.0.3",
       "Pomelo.EntityFrameworkCore.MySql >= 3.2.3",
+      "Repository >= 1.0.0",
       "Services >= 1.0.0"
     ]
   },
@@ -1009,6 +1025,9 @@
           "projectReferences": {
             "C:\\Users\\Ahmad\\source\\repos\\CountriesHolidaysApp\\Data\\Data.csproj": {
               "projectPath": "C:\\Users\\Ahmad\\source\\repos\\CountriesHolidaysApp\\Data\\Data.csproj"
+            },
+            "C:\\Users\\Ahmad\\source\\repos\\CountriesHolidaysApp\\Repository\\Repository.csproj": {
+              "projectPath": "C:\\Users\\Ahmad\\source\\repos\\CountriesHolidaysApp\\Repository\\Repository.csproj"
             },
             "C:\\Users\\Ahmad\\source\\repos\\CountriesHolidaysApp\\Services\\Services.csproj": {
               "projectPath": "C:\\Users\\Ahmad\\source\\repos\\CountriesHolidaysApp\\Services\\Services.csproj"
