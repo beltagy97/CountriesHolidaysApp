@@ -643,6 +643,9 @@
         }
       },
       "Repository/1.0.0": {
+        "dependencies": {
+          "Data": "1.0.0"
+        },
         "runtime": {
           "Repository.dll": {}
         },
@@ -652,7 +655,8 @@
       },
       "Services/1.0.0": {
         "dependencies": {
-          "Data": "1.0.0"
+          "Data": "1.0.0",
+          "Repository": "1.0.0"
         },
         "runtime": {
           "Services.dll": {}

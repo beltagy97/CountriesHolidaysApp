@@ -7,3 +7,6 @@ C:\Users\Ahmad\source\repos\CountriesHolidaysApp\Repository\obj\Debug\netcoreapp
 C:\Users\Ahmad\source\repos\CountriesHolidaysApp\Repository\obj\Debug\netcoreapp3.1\Repository.csproj.CoreCompileInputs.cache
 C:\Users\Ahmad\source\repos\CountriesHolidaysApp\Repository\obj\Debug\netcoreapp3.1\Repository.dll
 C:\Users\Ahmad\source\repos\CountriesHolidaysApp\Repository\obj\Debug\netcoreapp3.1\Repository.pdb
+C:\Users\Ahmad\source\repos\CountriesHolidaysApp\Repository\bin\Debug\netcoreapp3.1\Data.dll
+C:\Users\Ahmad\source\repos\CountriesHolidaysApp\Repository\bin\Debug\netcoreapp3.1\Data.pdb
+C:\Users\Ahmad\source\repos\CountriesHolidaysApp\Repository\obj\Debug\netcoreapp3.1\Repository.csproj.CopyComplete

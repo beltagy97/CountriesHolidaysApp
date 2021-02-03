@@ -188,7 +188,11 @@
         "frameworks": {
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\Ahmad\\source\\repos\\CountriesHolidaysApp\\Data\\Data.csproj": {
+                "projectPath": "C:\\Users\\Ahmad\\source\\repos\\CountriesHolidaysApp\\Data\\Data.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -245,6 +249,9 @@
             "projectReferences": {
               "C:\\Users\\Ahmad\\source\\repos\\CountriesHolidaysApp\\Data\\Data.csproj": {
                 "projectPath": "C:\\Users\\Ahmad\\source\\repos\\CountriesHolidaysApp\\Data\\Data.csproj"
+              },
+              "C:\\Users\\Ahmad\\source\\repos\\CountriesHolidaysApp\\Repository\\Repository.csproj": {
+                "projectPath": "C:\\Users\\Ahmad\\source\\repos\\CountriesHolidaysApp\\Repository\\Repository.csproj"
               }
             }
           }

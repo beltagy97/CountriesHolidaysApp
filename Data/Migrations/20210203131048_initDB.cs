@@ -1,9 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace CountriesAndHolidaysApp.Migrations
+namespace Data.Migrations
 {
-    public partial class FixNamingConventions : Migration
+    public partial class initDB : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -30,23 +30,23 @@ namespace CountriesAndHolidaysApp.Migrations
                     Name = table.Column<string>(nullable: false),
                     start_date = table.Column<string>(nullable: false),
                     end_date = table.Column<string>(nullable: false),
-                    CountryID = table.Column<int>(nullable: true)
+                    countryID = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Holidays", x => x.ID);
                     table.ForeignKey(
-                        name: "FK_Holidays_Countries_CountryID",
-                        column: x => x.CountryID,
+                        name: "FK_Holidays_Countries_countryID",
+                        column: x => x.countryID,
                         principalTable: "Countries",
                         principalColumn: "CountryID",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Holidays_CountryID",
+                name: "IX_Holidays_countryID",
                 table: "Holidays",
-                column: "CountryID");
+                column: "countryID");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

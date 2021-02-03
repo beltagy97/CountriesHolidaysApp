@@ -7,6 +7,9 @@ using Microsoft.EntityFrameworkCore;
 using Data.Context;
 using Services.Implementation;
 using Services;
+using Repository;
+using Repository.Implementations;
+using Data.Models;
 
 namespace CountriesAndHolidaysApp
 {
@@ -25,6 +28,8 @@ namespace CountriesAndHolidaysApp
             string mySqlConnectionStr = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContextPool<CountriesAndHolidaysContext>(options => options.UseMySql(mySqlConnectionStr));
             services.AddScoped<ICountryHolidayServices,CountryHolidayServices>();
+            services.AddScoped<CountryRepository>();
+            services.AddScoped<HolidayRepository>();
 
             services.AddControllers();
         }

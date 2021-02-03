@@ -73,7 +73,7 @@ namespace CountriesAndHolidaysApp.Controllers
 
         // DELETE method to delete a holiday
         // ROUTE : api/countryHoliday/{code}/{id}
-        [HttpDelete("{code}/{id}")]
+        [HttpDelete("{code}/{holidayId}")]
         public string Delete(string code,int holidayId)
         {
             if(holidayId < 0 )
