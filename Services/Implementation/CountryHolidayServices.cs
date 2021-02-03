@@ -2,6 +2,7 @@
 using Models;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using Repository;
 using Repository.Implementations;
 using System;
 using System.Collections.Generic;
@@ -14,10 +15,10 @@ namespace Services.Implementation
 {
     public class CountryHolidayServices : ICountryHolidayServices
     {
-        private readonly CountryRepository countryRepo;
-        private readonly HolidayRepository holidayRepo;
+        private readonly ICountryRepository countryRepo;
+        private readonly IHolidayRepository holidayRepo;
 
-        public CountryHolidayServices(CountryRepository countryRepo, HolidayRepository holidayRepo)
+        public CountryHolidayServices(ICountryRepository countryRepo, IHolidayRepository holidayRepo)
         {
             this.countryRepo = countryRepo;
             this.holidayRepo = holidayRepo;

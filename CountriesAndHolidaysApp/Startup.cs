@@ -28,8 +28,8 @@ namespace CountriesAndHolidaysApp
             string mySqlConnectionStr = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContextPool<CountriesAndHolidaysContext>(options => options.UseMySql(mySqlConnectionStr));
             services.AddScoped<ICountryHolidayServices,CountryHolidayServices>();
-            services.AddScoped<CountryRepository>();
-            services.AddScoped<HolidayRepository>();
+            services.AddScoped<ICountryRepository,CountryRepository>();
+            services.AddScoped<IHolidayRepository,HolidayRepository>();
 
             services.AddControllers();
         }

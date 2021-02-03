@@ -8,7 +8,7 @@ using System.Text;
 
 namespace Repository.Implementations
 {
-    public class HolidayRepository
+    public class HolidayRepository: IHolidayRepository
     {
 
         private readonly CountriesAndHolidaysContext context;
