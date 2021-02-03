@@ -88,3 +88,5 @@ C:\Users\Ahmad\source\repos\CountriesHolidaysApp\CountriesAndHolidaysApp\obj\Deb
 C:\Users\Ahmad\source\repos\CountriesHolidaysApp\CountriesAndHolidaysApp\obj\Debug\netcoreapp3.1\CountriesAndHolidaysApp.RazorTargetAssemblyInfo.cache
 C:\Users\Ahmad\source\repos\CountriesHolidaysApp\CountriesAndHolidaysApp\obj\Debug\netcoreapp3.1\CountriesAndHolidaysApp.csproj.CopyComplete
 C:\Users\Ahmad\source\repos\CountriesHolidaysApp\CountriesAndHolidaysApp\obj\Debug\netcoreapp3.1\CountriesAndHolidaysApp.genruntimeconfig.cache
+C:\Users\Ahmad\source\repos\CountriesHolidaysApp\CountriesAndHolidaysApp\bin\Debug\netcoreapp3.1\Services.dll
+C:\Users\Ahmad\source\repos\CountriesHolidaysApp\CountriesAndHolidaysApp\bin\Debug\netcoreapp3.1\Services.pdb

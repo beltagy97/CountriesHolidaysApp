@@ -4,8 +4,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
-using CountriesAndHolidaysApp.Services;
 using Data.Context;
+using Services.Implementation;
+using Services;
 
 namespace CountriesAndHolidaysApp
 {
@@ -23,7 +24,7 @@ namespace CountriesAndHolidaysApp
         {
             string mySqlConnectionStr = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContextPool<CountriesAndHolidaysContext>(options => options.UseMySql(mySqlConnectionStr));
-            services.AddScoped<ICountryHolidayServices, CountryHolidayServices>();
+            services.AddScoped<ICountryHolidayServices,CountryHolidayServices>();
 
             services.AddControllers();
         }

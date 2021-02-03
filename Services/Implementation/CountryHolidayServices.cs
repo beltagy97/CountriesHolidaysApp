@@ -6,11 +6,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
+using System.Text;
 using System.Threading.Tasks;
 
-namespace CountriesAndHolidaysApp.Services
+namespace Services.Implementation
 {
-    public class CountryHolidayServices :  ICountryHolidayServices
+    public class CountryHolidayServices : ICountryHolidayServices
     {
         private readonly CountriesAndHolidaysContext context;
 
@@ -145,12 +146,12 @@ namespace CountriesAndHolidaysApp.Services
 
         }
 
-        public string deleteHoliday(string code , int id)
+        public string deleteHoliday(string code, int id)
         {
             try
             {
                 Country country = context.Countries.Where(country => country.code == code).SingleOrDefault();
-                if(country == null) return JsonConvert.SerializeObject(new { message = "DELETE FAILED" });
+                if (country == null) return JsonConvert.SerializeObject(new { message = "DELETE FAILED" });
                 int countryID = country.CountryID;
                 Holiday specificHoliday = context.Holidays.Where(holiday => holiday.countryID == countryID && holiday.ID == id).Single();
                 context.Remove(specificHoliday);
@@ -161,7 +162,7 @@ namespace CountriesAndHolidaysApp.Services
             {
                 return JsonConvert.SerializeObject(new { message = "DELETE FAILED" });
             }
-            
+
         }
 
         public string addHoliday(Holiday newHoliday)
@@ -170,7 +171,7 @@ namespace CountriesAndHolidaysApp.Services
             {
                 //checks if countryID is available
                 Country country = context.Countries.Where(country => country.CountryID == newHoliday.countryID).SingleOrDefault();
-                if(country == null) return JsonConvert.SerializeObject(new { message = "DELETE FAILED" });
+                if (country == null) return JsonConvert.SerializeObject(new { message = "DELETE FAILED" });
 
                 context.Add(newHoliday);
                 context.SaveChanges();
@@ -202,9 +203,9 @@ namespace CountriesAndHolidaysApp.Services
         {
             try
             {
-               
+
                 Holiday desiredHoliday = context.Holidays.Find(id);
-                
+
                 if (desiredHoliday == null) return JsonConvert.SerializeObject(new { message = "COULD NOT MODIFY RECORD" });
 
 
@@ -215,10 +216,10 @@ namespace CountriesAndHolidaysApp.Services
                 desiredHoliday.end_date = newHoliday.end_date;
                 desiredHoliday.countryID = newHoliday.countryID;
 
-               
+
                 context.SaveChanges();
 
-                
+
 
                 return JsonConvert.SerializeObject(new { message = "Record Modified" });
             }
@@ -228,13 +229,13 @@ namespace CountriesAndHolidaysApp.Services
             }
         }
 
-        
 
-        public string getCountries(int pageNumber,int pageSize = 50)
+
+        public string getCountries(int pageNumber, int pageSize = 50)
         {
             //move page size as parameter
             int skippedPages = (pageNumber - 1) * pageSize;
-            var countries = context.Countries.Skip(skippedPages).Take(pageSize).Select(country =>  new {Name = country.name, Code = country.code }).ToList();
+            var countries = context.Countries.Skip(skippedPages).Take(pageSize).Select(country => new { Name = country.name, Code = country.code }).ToList();
             return JsonConvert.SerializeObject(countries);
         }
     }
