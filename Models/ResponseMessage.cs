@@ -4,8 +4,8 @@ using System.Text;
 
 namespace Models
 {
-    class ResponseMessage
+    public class ResponseMessage
     {
-        string Message;
+        public string Message { get; set; }
     }
 }

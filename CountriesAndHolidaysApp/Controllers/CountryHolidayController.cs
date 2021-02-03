@@ -45,9 +45,9 @@ namespace CountriesAndHolidaysApp.Controllers
         // POST method to sync data from external APIs
         // ROUTE : api/countryHoliday/sync
         [HttpPost, Route("sync")]
-        public async Task<object> PostData()
+        public async Task<ResponseMessage> PostData()
         {
-            object response = await srvc.sync();
+            ResponseMessage response = await srvc.sync();
             return response;
 
         }
@@ -56,7 +56,7 @@ namespace CountriesAndHolidaysApp.Controllers
         // POST method to add a holiday
         // ROUTE : api/countryHoliday
         [HttpPost]
-        public string PostHoliday([FromBody] Holiday newHoliday)
+        public ResponseMessage PostHoliday([FromBody] Holiday newHoliday)
         {
             return srvc.addHoliday(newHoliday);
         }
@@ -65,7 +65,7 @@ namespace CountriesAndHolidaysApp.Controllers
         // Put method to modify an existing holiday
         // ROUTE : api/countryHoliday/{holidayID}
         [HttpPut("{id}")]
-        public string Put(int id, [FromBody] Holiday newHoliday)
+        public ResponseMessage Put(int id, [FromBody] Holiday newHoliday)
         {
             return srvc.modifyHoliday(id, newHoliday);
             
@@ -74,11 +74,11 @@ namespace CountriesAndHolidaysApp.Controllers
         // DELETE method to delete a holiday
         // ROUTE : api/countryHoliday/{code}/{id}
         [HttpDelete("{code}/{holidayId}")]
-        public string Delete(string code,int holidayId)
+        public ResponseMessage Delete(string code,int holidayId)
         {
             if(holidayId < 0 )
             {
-                return JsonConvert.SerializeObject(new { message = "Bad Request!" }); 
+                return new ResponseMessage { Message = "Bad Request!" }; 
             }
             return srvc.deleteHoliday(code, holidayId);
             

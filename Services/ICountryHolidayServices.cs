@@ -10,13 +10,13 @@ namespace Services
     {
         public string getCountryHolidays(string countryCode);
 
-        public Task<object> sync();
+        public Task<ResponseMessage> sync();
 
-        public string deleteHoliday(string code, int id);
+        public ResponseMessage deleteHoliday(string code, int id);
 
-        public string addHoliday(Holiday newHoliday);
+        public ResponseMessage addHoliday(Holiday newHoliday);
 
-        public string modifyHoliday(int id, Holiday newHoliday);
+        public ResponseMessage modifyHoliday(int id, Holiday newHoliday);
 
         public string getCountries(int pageNumber, int pageSize = 50);
     }

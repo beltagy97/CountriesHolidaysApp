@@ -23,7 +23,7 @@ namespace Services.Implementation
             this.holidayRepo = holidayRepo;
         }
 
-        public async Task<object> sync()
+        public async Task<ResponseMessage> sync()
         {
             
             //move the url to settings
@@ -51,12 +51,12 @@ namespace Services.Implementation
                 }
                 catch (Exception e)
                 {
-                    return new { error = e };
+                    return new ResponseMessage{ Message = e.ToString() };
                 }
             }
 
 
-            return new { numberOfRowsAffected = idx };
+            return new ResponseMessage{ Message = "NumberOfRowsAffected "+idx };
 
 
         }
@@ -67,45 +67,45 @@ namespace Services.Implementation
             return JsonConvert.SerializeObject(countryRepo.getCountryHolidays(countryCode));
         }
 
-        public string deleteHoliday(string code, int holidayID)
+        public ResponseMessage deleteHoliday(string code, int holidayID)
         {
             
             Country country = countryRepo.FindbyCode(code);
-            if (country == null) return JsonConvert.SerializeObject(new { message = "DELETE FAILED" });
+            if (country == null) return new ResponseMessage{ Message = "DELETE FAILED" };
 
 
             Holiday specificHoliday = holidayRepo.Find(holidayID);
 
-            if (specificHoliday == null) return JsonConvert.SerializeObject(new { message = "DELETE FAILED" });
+            if (specificHoliday == null) return new ResponseMessage{ Message = "DELETE FAILED" };
 
                 holidayRepo.Delete(specificHoliday);
-                return JsonConvert.SerializeObject(new { message = "DELETE SUCCESSFUL" });
+                return new ResponseMessage { Message = "DELETE SUCCESSFUL" };
 
         }
 
-        public string addHoliday(Holiday newHoliday)
+        public ResponseMessage addHoliday(Holiday newHoliday)
         {
                 //checks if countryID is available
-                if (!countryRepo.Exists(newHoliday.countryID)) return JsonConvert.SerializeObject(new { message = "ADD FAILED" });
+                if (!countryRepo.Exists(newHoliday.countryID)) return new ResponseMessage { Message = "ADD FAILED" };
                 
                 holidayRepo.CreateHoliday(newHoliday);
-                return JsonConvert.SerializeObject(new { message = "Success" });
+                return new ResponseMessage { Message = "Success" };
         }
 
-        public string modifyHoliday(int id, Holiday newHoliday)
+        public ResponseMessage modifyHoliday(int id, Holiday newHoliday)
         {
             
                 Holiday desiredHoliday = holidayRepo.Find(id);
 
-                if (desiredHoliday == null) return JsonConvert.SerializeObject(new { message = "COULD NOT MODIFY RECORD" });
+                if (desiredHoliday == null) return new ResponseMessage { Message = "COULD NOT MODIFY RECORD" };
 
                 
-                if (!countryRepo.Exists(newHoliday.countryID)) return JsonConvert.SerializeObject(new { message = "COULD NOT MODIFY RECORD" });
+                if (!countryRepo.Exists(newHoliday.countryID)) return new ResponseMessage { Message = "COULD NOT MODIFY RECORD" };
 
 
                 holidayRepo.UpdateHoliday(desiredHoliday,newHoliday);
 
-                return JsonConvert.SerializeObject(new { message = "Record Modified" });
+                return new ResponseMessage { Message = "Record Modified" };
             
             
         }

@@ -1,7 +1,6 @@
 C:\Users\Ahmad\source\repos\CountriesHolidaysApp\Models\bin\Debug\netcoreapp3.1\Models.deps.json
 C:\Users\Ahmad\source\repos\CountriesHolidaysApp\Models\bin\Debug\netcoreapp3.1\Models.dll
 C:\Users\Ahmad\source\repos\CountriesHolidaysApp\Models\bin\Debug\netcoreapp3.1\Models.pdb
-C:\Users\Ahmad\source\repos\CountriesHolidaysApp\Models\obj\Debug\netcoreapp3.1\Models.csprojAssemblyReference.cache
 C:\Users\Ahmad\source\repos\CountriesHolidaysApp\Models\obj\Debug\netcoreapp3.1\Models.AssemblyInfoInputs.cache
 C:\Users\Ahmad\source\repos\CountriesHolidaysApp\Models\obj\Debug\netcoreapp3.1\Models.AssemblyInfo.cs
 C:\Users\Ahmad\source\repos\CountriesHolidaysApp\Models\obj\Debug\netcoreapp3.1\Models.csproj.CoreCompileInputs.cache
