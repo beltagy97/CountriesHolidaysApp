@@ -34,10 +34,10 @@ namespace Repository.Implementations
         }
 
 
-        public List<Country> getCountriesList(int pageNumber, int pageSize)
+        public List<CountryList> getCountriesList(int pageNumber, int pageSize)
         {
             int skippedPages = (pageNumber - 1) * pageSize;
-            return context.Countries.Skip(skippedPages).Take(pageSize).Select(country => new Country{ name = country.name, code = country.code }).ToList();
+            return context.Countries.Skip(skippedPages).Take(pageSize).Select(country => new CountryList{ Name = country.name, code = country.code }).ToList();
         }
 
         public List<CountryHolidayResultSet> getCountryHolidays(string code)

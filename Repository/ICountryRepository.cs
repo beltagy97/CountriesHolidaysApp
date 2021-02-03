@@ -9,7 +9,7 @@ namespace Repository
     {
         public Country getCountryByID(int id);
         public void Add(Country country);
-        public List<Country> getCountriesList(int pageNumber, int pageSize);
+        public List<CountryList> getCountriesList(int pageNumber, int pageSize);
         public List<CountryHolidayResultSet> getCountryHolidays(string code);
         public bool Exists(int id);
         public Country FindbyCode(string code);
