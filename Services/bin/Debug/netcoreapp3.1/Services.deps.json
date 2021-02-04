@@ -10,7 +10,8 @@
         "dependencies": {
           "Data": "1.0.0",
           "Models": "1.0.0",
-          "Repository": "1.0.0"
+          "Repository": "1.0.0",
+          "UnitOfWork": "1.0.0"
         },
         "runtime": {
           "Services.dll": {}
@@ -274,6 +275,14 @@
         "runtime": {
           "Repository.dll": {}
         }
+      },
+      "UnitOfWork/1.0.0": {
+        "dependencies": {
+          "Data": "1.0.0"
+        },
+        "runtime": {
+          "UnitOfWork.dll": {}
+        }
       }
     }
   },
@@ -469,6 +478,11 @@
       "sha512": ""
     },
     "Repository/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "UnitOfWork/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

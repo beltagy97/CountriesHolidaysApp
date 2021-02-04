@@ -321,6 +321,19 @@
         "runtime": {
           "bin/placeholder/Repository.dll": {}
         }
+      },
+      "UnitOfWork/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Data": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/UnitOfWork.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/UnitOfWork.dll": {}
+        }
       }
     }
   },
@@ -916,13 +929,19 @@
       "type": "project",
       "path": "../Repository/Repository.csproj",
       "msbuildProject": "../Repository/Repository.csproj"
+    },
+    "UnitOfWork/1.0.0": {
+      "type": "project",
+      "path": "../UnitOfWork/UnitOfWork.csproj",
+      "msbuildProject": "../UnitOfWork/UnitOfWork.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "Data >= 1.0.0",
       "Models >= 1.0.0",
-      "Repository >= 1.0.0"
+      "Repository >= 1.0.0",
+      "UnitOfWork >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -960,6 +979,9 @@
             },
             "C:\\Users\\Ahmad\\source\\repos\\CountriesHolidaysApp\\Repository\\Repository.csproj": {
               "projectPath": "C:\\Users\\Ahmad\\source\\repos\\CountriesHolidaysApp\\Repository\\Repository.csproj"
+            },
+            "C:\\Users\\Ahmad\\source\\repos\\CountriesHolidaysApp\\UnitOfWork\\UnitOfWork.csproj": {
+              "projectPath": "C:\\Users\\Ahmad\\source\\repos\\CountriesHolidaysApp\\UnitOfWork\\UnitOfWork.csproj"
             }
           }
         }

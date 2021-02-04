@@ -94,3 +94,5 @@ C:\Users\Ahmad\source\repos\CountriesHolidaysApp\CountriesAndHolidaysApp\bin\Deb
 C:\Users\Ahmad\source\repos\CountriesHolidaysApp\CountriesAndHolidaysApp\bin\Debug\netcoreapp3.1\Repository.pdb
 C:\Users\Ahmad\source\repos\CountriesHolidaysApp\CountriesAndHolidaysApp\bin\Debug\netcoreapp3.1\Models.dll
 C:\Users\Ahmad\source\repos\CountriesHolidaysApp\CountriesAndHolidaysApp\bin\Debug\netcoreapp3.1\Models.pdb
+C:\Users\Ahmad\source\repos\CountriesHolidaysApp\CountriesAndHolidaysApp\bin\Debug\netcoreapp3.1\UnitOfWork.dll
+C:\Users\Ahmad\source\repos\CountriesHolidaysApp\CountriesAndHolidaysApp\bin\Debug\netcoreapp3.1\UnitOfWork.pdb

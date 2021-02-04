@@ -9,7 +9,7 @@ using Services.Implementation;
 using Services;
 using Repository;
 using Repository.Implementations;
-
+using UnitOfWork;
 
 namespace CountriesAndHolidaysApp
 {
@@ -30,6 +30,7 @@ namespace CountriesAndHolidaysApp
             services.AddScoped<ICountryHolidayServices,CountryHolidayServices>();
             services.AddScoped<ICountryRepository,CountryRepository>();
             services.AddScoped<IHolidayRepository,HolidayRepository>();
+            services.AddScoped<IUnitOfWork,UnitOfWork.UnitOfWork>();
 
             services.AddControllers();
         }

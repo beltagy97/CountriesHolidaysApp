@@ -32,6 +32,7 @@
           "Pomelo.EntityFrameworkCore.MySql": "3.2.3",
           "Repository": "1.0.0",
           "Services": "1.0.0",
+          "UnitOfWork": "1.0.0",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "3.1.0.0",
@@ -668,13 +669,25 @@
         "dependencies": {
           "Data": "1.0.0",
           "Models": "1.0.0",
-          "Repository": "1.0.0"
+          "Repository": "1.0.0",
+          "UnitOfWork": "1.0.0"
         },
         "runtime": {
           "Services.dll": {}
         },
         "compile": {
           "Services.dll": {}
+        }
+      },
+      "UnitOfWork/1.0.0": {
+        "dependencies": {
+          "Data": "1.0.0"
+        },
+        "runtime": {
+          "UnitOfWork.dll": {}
+        },
+        "compile": {
+          "UnitOfWork.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery/3.1.0.0": {
@@ -2504,6 +2517,11 @@
       "sha512": ""
     },
     "Services/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "UnitOfWork/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

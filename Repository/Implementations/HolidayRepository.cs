@@ -24,7 +24,7 @@ namespace Repository.Implementations
         public void CreateHoliday(Holiday holiday)
         {
             this.dbSet.Add(holiday);
-            this.context.SaveChanges();
+            
         }
 
         public void UpdateHoliday(Holiday holiday, Holiday newHoliday)
@@ -33,7 +33,7 @@ namespace Repository.Implementations
             holiday.start_date = newHoliday.start_date;
             holiday.end_date = newHoliday.end_date;
             holiday.countryID = newHoliday.countryID;
-            this.context.SaveChanges();
+            
         }
 
         public Holiday Find(int id)
@@ -44,7 +44,7 @@ namespace Repository.Implementations
         public void Delete(Holiday holiday)
         {
             this.dbSet.Remove(holiday);
-            this.context.SaveChanges();
+            
         }
 
 

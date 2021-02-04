@@ -5,13 +5,15 @@ VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CountriesAndHolidaysApp", "CountriesAndHolidaysApp\CountriesAndHolidaysApp.csproj", "{8FF23F34-7A94-4CFD-AF5F-90740632449D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{B2909DC5-01B1-4747-8C88-0706C86EB988}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data", "Data\Data.csproj", "{B2909DC5-01B1-4747-8C88-0706C86EB988}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Services.csproj", "{4A490728-4581-4A20-BD2C-87667754DC42}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Services", "Services\Services.csproj", "{4A490728-4581-4A20-BD2C-87667754DC42}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository", "Repository\Repository.csproj", "{B79DE5B7-6A6A-47AC-BBFB-E3DE857861C9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repository", "Repository\Repository.csproj", "{B79DE5B7-6A6A-47AC-BBFB-E3DE857861C9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{23534C34-E387-4A75-A895-6DAEC8A55E6C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Models", "Models\Models.csproj", "{23534C34-E387-4A75-A895-6DAEC8A55E6C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitOfWork", "UnitOfWork\UnitOfWork.csproj", "{767F2A52-3541-451E-AD1E-1ACFC6BD0C46}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{23534C34-E387-4A75-A895-6DAEC8A55E6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{23534C34-E387-4A75-A895-6DAEC8A55E6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{23534C34-E387-4A75-A895-6DAEC8A55E6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{767F2A52-3541-451E-AD1E-1ACFC6BD0C46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{767F2A52-3541-451E-AD1E-1ACFC6BD0C46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{767F2A52-3541-451E-AD1E-1ACFC6BD0C46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{767F2A52-3541-451E-AD1E-1ACFC6BD0C46}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

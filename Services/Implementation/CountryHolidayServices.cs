@@ -10,6 +10,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using UnitOfWork;
 
 namespace Services.Implementation
 {
@@ -17,11 +18,12 @@ namespace Services.Implementation
     {
         private readonly ICountryRepository countryRepo;
         private readonly IHolidayRepository holidayRepo;
-
-        public CountryHolidayServices(ICountryRepository countryRepo, IHolidayRepository holidayRepo)
+        private readonly IUnitOfWork unitOfWork;
+        public CountryHolidayServices(ICountryRepository countryRepo, IHolidayRepository holidayRepo, IUnitOfWork unitOfWork)
         {
             this.countryRepo = countryRepo;
             this.holidayRepo = holidayRepo;
+            this.unitOfWork = unitOfWork;
         }
 
         public async Task<ResponseMessage> sync()
@@ -47,6 +49,7 @@ namespace Services.Implementation
 
                     
                     countryRepo.Add(newCountry);
+                    unitOfWork.SaveChanges();
                     idx++;
 
                 }
@@ -80,6 +83,7 @@ namespace Services.Implementation
             if (specificHoliday == null) return new ResponseMessage{ Message = "DELETE FAILED" };
 
                 holidayRepo.Delete(specificHoliday);
+                unitOfWork.SaveChanges();
                 return new ResponseMessage { Message = "DELETE SUCCESSFUL" };
 
         }
@@ -90,7 +94,8 @@ namespace Services.Implementation
                 if (!countryRepo.Exists(newHoliday.countryID)) return new ResponseMessage { Message = "ADD FAILED" };
                 
                 holidayRepo.CreateHoliday(newHoliday);
-                return new ResponseMessage { Message = "Success" };
+                unitOfWork.SaveChanges();
+            return new ResponseMessage { Message = "Success" };
         }
 
         public ResponseMessage modifyHoliday(int id, Holiday newHoliday)
@@ -105,8 +110,9 @@ namespace Services.Implementation
 
 
                 holidayRepo.UpdateHoliday(desiredHoliday,newHoliday);
+                unitOfWork.SaveChanges();
 
-                return new ResponseMessage { Message = "Record Modified" };
+            return new ResponseMessage { Message = "Record Modified" };
             
             
         }

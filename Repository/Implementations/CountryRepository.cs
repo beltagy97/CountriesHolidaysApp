@@ -30,7 +30,7 @@ namespace Repository.Implementations
         public void Add(Country country)
         {
             this.dbSet.Add(country);
-            context.SaveChanges();
+            
         }
 
 
