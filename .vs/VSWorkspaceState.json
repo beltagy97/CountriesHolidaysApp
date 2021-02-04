@@ -1,7 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\CountriesAndHolidaysApp",
+    "\\CountriesAndHolidaysApp\\Controllers",
+    "\\Repository",
+    "\\Repository\\Implementations"
   ],
-  "SelectedNode": "\\CountriesAndHolidaysApp.sln",
+  "SelectedNode": "\\CountriesAndHolidaysApp\\Startup.cs",
   "PreviewInSolutionExplorer": false
 }

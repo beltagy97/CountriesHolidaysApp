@@ -10,6 +10,7 @@ using Services;
 using Repository;
 using Repository.Implementations;
 using UnitOfWork;
+using Data;
 
 namespace CountriesAndHolidaysApp
 {
@@ -25,12 +26,19 @@ namespace CountriesAndHolidaysApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            string mySqlConnectionStr = Configuration.GetConnectionString("DefaultConnection");
-            services.AddDbContext<CountriesAndHolidaysContext>(options => options.UseMySql(mySqlConnectionStr));
+            var settings = new ConnString
+            {
+                ConnectionString = Configuration.GetConnectionString("DefaultConnection")
+        };
+
+            services.AddSingleton(settings);
+
+
             services.AddScoped<ICountryHolidayServices,CountryHolidayServices>();
             services.AddScoped<ICountryRepository,CountryRepository>();
             services.AddScoped<IHolidayRepository,HolidayRepository>();
             services.AddScoped<IUnitOfWork,UnitOfWork.UnitOfWork>();
+            services.AddScoped<IDBFactory, DBFactory>();
 
             services.AddControllers();
         }

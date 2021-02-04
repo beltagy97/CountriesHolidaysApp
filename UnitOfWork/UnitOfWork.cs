@@ -1,4 +1,5 @@
-﻿using Data.Context;
+﻿using Data;
+using Data.Context;
 using System;
 
 namespace UnitOfWork
@@ -6,9 +7,9 @@ namespace UnitOfWork
     public class UnitOfWork : IUnitOfWork
     {
         private readonly CountriesAndHolidaysContext context;
-        public UnitOfWork(CountriesAndHolidaysContext context)
+        public UnitOfWork(IDBFactory factory)
         {
-            this.context = context;
+            this.context = factory.getDB();
         }
 
         public int SaveChanges()

@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Data;
 
 namespace Repository.Implementations
 {
@@ -14,9 +15,9 @@ namespace Repository.Implementations
         private readonly CountriesAndHolidaysContext context;
         internal DbSet<Holiday> dbSet;
 
-        public HolidayRepository(CountriesAndHolidaysContext context)
+        public HolidayRepository(IDBFactory factory)
         {
-            this.context = context;
+            this.context = factory.getDB();
             this.dbSet = context.Set<Holiday>();
         }
 
