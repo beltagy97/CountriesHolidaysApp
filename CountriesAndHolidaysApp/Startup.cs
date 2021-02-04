@@ -26,7 +26,7 @@ namespace CountriesAndHolidaysApp
         public void ConfigureServices(IServiceCollection services)
         {
             string mySqlConnectionStr = Configuration.GetConnectionString("DefaultConnection");
-            services.AddDbContextPool<CountriesAndHolidaysContext>(options => options.UseMySql(mySqlConnectionStr));
+            services.AddDbContext<CountriesAndHolidaysContext>(options => options.UseMySql(mySqlConnectionStr));
             services.AddScoped<ICountryHolidayServices,CountryHolidayServices>();
             services.AddScoped<ICountryRepository,CountryRepository>();
             services.AddScoped<IHolidayRepository,HolidayRepository>();

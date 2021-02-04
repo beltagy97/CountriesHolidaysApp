@@ -16,7 +16,7 @@ namespace Data.Migrations
                 .HasAnnotation("ProductVersion", "3.1.9")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
-            modelBuilder.Entity("Data.Models.Country", b =>
+            modelBuilder.Entity("Models.Country", b =>
                 {
                     b.Property<int>("CountryID")
                         .ValueGeneratedOnAdd()
@@ -33,7 +33,7 @@ namespace Data.Migrations
                     b.ToTable("Countries");
                 });
 
-            modelBuilder.Entity("Data.Models.Holiday", b =>
+            modelBuilder.Entity("Models.Holiday", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
@@ -61,9 +61,9 @@ namespace Data.Migrations
                     b.ToTable("Holidays");
                 });
 
-            modelBuilder.Entity("Data.Models.Holiday", b =>
+            modelBuilder.Entity("Models.Holiday", b =>
                 {
-                    b.HasOne("Data.Models.Country", null)
+                    b.HasOne("Models.Country", null)
                         .WithMany("Holidays")
                         .HasForeignKey("countryID")
                         .OnDelete(DeleteBehavior.Cascade)
